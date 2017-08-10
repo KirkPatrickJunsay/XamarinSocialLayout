@@ -2,10 +2,68 @@
 <ContentPage xmlns="http://xamarin.com/schemas/2014/forms"
              xmlns:x="http://schemas.microsoft.com/winfx/2009/xaml"
              xmlns:local="clr-namespace:SocialLayout"
-             x:Class="SocialLayout.MainPage">
+             x:Class="SocialLayout.MainPage"
+             BackgroundColor="{StaticResource BackgroundColor}">
 
-	<Label Text="Welcome to Xamarin Forms!" 
-           VerticalOptions="Center" 
-           HorizontalOptions="Center" />
+    <Grid RowSpacing="0">
+        <Grid.RowDefinitions>
+            <RowDefinition Height="AUTO"/>
+            <RowDefinition Height="AUTO"/>
+            <RowDefinition Height="AUTO"/>
+            <RowDefinition Height="*"/>
+            <RowDefinition Height="AUTO"/>
+        </Grid.RowDefinitions>
+
+        <!-- Header Background -->
+        
+        <Image Source="HeaderBackground.png" Aspect="AspectFill"/>
+        <Image Source="CurvedMask.png" VerticalOptions="End" Aspect="Fill" />
+        
+        <!-- Profile Name-->
+
+        <StackLayout Grid.Row="1" Padding="0,50,0,0">
+            <Label Text="Kirk Patrick Junsay" Style="{StaticResource ProfileNameLabel}"/>
+            <Label Text="Computer Geek" Style="{StaticResource ProfileTagLabel}"/>
+        </StackLayout>
+
+        <!-- Social Stats -->
+
+        <Grid Grid.Row="2" ColumnSpacing="0" Margin="0,40">
+            <Grid.ColumnDefinitions>
+                <ColumnDefinition Width="*"/>
+                <ColumnDefinition Width="*"/>
+                <ColumnDefinition Width="*"/>
+            </Grid.ColumnDefinitions>
+
+            <StackLayout Grid.Column="0">
+                <Label Text="33" Style="{StaticResource StatsNumberLabel}"/>
+                <Label Text="Likes" Style="{StaticResource StatsCaptionLabel}"/>
+            </StackLayout>
+
+            <StackLayout Grid.Column="1">
+                <Label Text="100" Style="{StaticResource StatsNumberLabel}"/>
+                <Label Text="Following" Style="{StaticResource StatsCaptionLabel}"/>
+            </StackLayout>
+
+            <StackLayout Grid.Column="2">
+                <Label Text="50" Style="{StaticResource StatsNumberLabel}"/>
+                <Label Text="Followers" Style="{StaticResource StatsCaptionLabel}"/>
+            </StackLayout>
+        </Grid>
+
+        <!-- Profile -->
+
+        <Label Grid.Row="3" Text="In by an appetite no humoured returned informed. Possession so comparison inquietude he he conviction no decisively. Marianne jointure attended she hastened surprise but she. Ever lady son yet you very paid form away. He advantage of exquisite resolving if on tolerably. Become sister on in garden it barton waited on. 
+        Written enquire painful ye to offices forming it. Then so does over sent dull on. Likewise offended humoured mrs fat trifling answered. On ye position greatest so desirous. So wound stood guest weeks no terms up ought. By so these am so rapid blush songs begin. Nor but mean time one over."
+               Style="{StaticResource MainBodyLabel}" Margin="20,10"/>
+
+        <!-- Follow Button -->
+
+        <Button Grid.Row="4" Text="Follow" Margin="20" Style="{StaticResource FollowButton}"/>
+
+        <!-- Profile Image -->
+        <Image Source="KirkProfile.png" WidthRequest="100" HeightRequest="100" HorizontalOptions="Center"
+               VerticalOptions="End" TranslationY="50"/>
+    </Grid>
 
 </ContentPage>
